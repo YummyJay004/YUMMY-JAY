@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothing Brand Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <a href="#" class="logo">
+        <img src="images/logo.jpeg" alt="logo">
+    </a>
+    <nav class="navbar">
+        <button type="button" onclick="displayJeans()" class="button-81">Jeans</button>
+        <button type="button" onclick="displayTshirt()" class="button-81">T-shirt</button>
+        <button type="button" onclick="displayPerfume()" class="button-81">Perfume</button>
+        <button type="button" onclick="displaySando()" class="button-81">Sando</button>
+        <button type="button" onclick="displayToy()" class="button-81">Toys</button>
+        <a href="stock_room.html" class="button-81">Stock Room</a>
+    </nav>
+  </header>
+  <div class="cart-summary">
+    <button id="cart-button" onclick="toggleCart()" class="button-81">Cart Item (<span id="cart-count-summary">0</span>)</button>
+    <div class="cart-content" id="cart-content">
+      <div id="cart-items"></div>
+      <div>
+        <input type="radio" name="discount" id="student" value="0.15">
+        <label for="student">Student 15%</label><br>
+        <input type="radio" name="discount" id="senior" value="0.20">
+        <label for="senior">Senior 20%</label><br>
+        <input type="radio" name="discount" id="disabled" value="0.30">
+        <label for="disabled">Disabled 30%</label><br>
+      </div>
+      <p>Total: $<span id="cart-total">0.00</span></p>
+      <button onclick="checkout()" id="check" class="button-81">Checkout</button>
+    </div>
+  </div>
+  <main>
+    <section class="jeans" id="jeans">
+      <h2>Jeans</h2>
+      <div class="item">
+        <img src="images/J1.jpg" alt="Jeans 1">
+        <div class="item-details">
+          <h3>Slim-Fit Jeans</h3>
+          <p>Another popular style of jeans for men, slim-fit jeans are designed to be tapered through the leg and are snugger around the thighs and calves compared to straight-leg jeans.</p>
+          <br>
+          <p class="priceFont">Price: $<span id="jeans1-price">30</span></p>
+          <p class="stockFont">Stock: <span id="jeans1-stock">10</span></p>
+          <button onclick="addToCart('SFJ', 'jeans1')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="item">
+        <img src="images/j2.png" alt="Jeans 2">
+        <div class="item-details">
+          <h3>Skinny Jeans</h3>
+          <p>Skinny jeans are even tighter and more form-fitting than slim-fit jeans. These jeans are designed to hug your legs and typically have a tapered ankle, creating a sleek and streamlined look.</p>
+          <br>
+          <p class="priceFont">Price: $<span id="jeans2-price">20</span></p>
+          <p class="stockFont">Stock: <span id="jeans2-stock">10</span></p>
+          <button onclick="addToCart('SJ', 'jeans2')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/j3.png" alt="Jeans 3">
+        <div class="item-details">
+          <h3>Relaxed-Fit Jeans</h3>
+          <p>For men who prioritise comfort and ease, investing in a pair of relaxed-fit jeans is a great option. These baggy jeans have a looser fit around the thigh and calf area, creating a more comfortable and relaxed feel. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="jeans3-price">10</span></p>
+          <p class="stockFont">Stock: <span id="jeans3-stock">10</span></p>
+          <button onclick="addToCart('RFJ', 'jeans3')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/j4.png" alt="Jeans 4">
+        <div class="item-details">
+          <h3>Bootcut Jeans</h3>
+          <p>As 70s fashion makes a comeback, bootcut jeans are regaining popularity. If you’re not familiar with this iconic style of jeans, bootcut jeans are designed with a slight flare at the bottom of the leg, allowing them to fit over boots or shoes with a wider sole. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="jeans4-price">15</span></p>
+          <p class="stockFont">Stock: <span id="jeans4-stock">10</span></p>
+          <button onclick="addToCart('BCJ', 'jeans4')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+    <section class="tshirt" id="tshirt" >
+      <h2 id="tshirt">T-shirt</h2>
+      <div class="item">
+        <img src="images/t1.png" alt="T-shirt 1">
+        <div class="item-details">
+          <h3>Alternative</h3>
+          <p>For years now, Alternative's been churning out some of the softest tees in the business. (A subtle slub only adds to the appeal.) These are affordable, classic, and timeless, so whether you snag one to wear alone or a couple to rotate for layering, you're in good hands. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="tshirt1-price">20</span></p>
+          <p class="stockFont">Stock: <span id="tshirt1-stock">10</span></p>
+          <button onclick="addToCart('AT', 'tshirt1')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/t2.png" alt="T-shirt 2">
+        <div class="item-details">
+          <h3>Buck Mason</h3>
+          <p>Buck Mason's signature curved hem tees look better roughed up, so no need to treat 'em gently. It helps that the fabric is thick, heavy, and durable, too. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="tshirt2-price">15</span></p>
+          <p class="stockFont">Stock: <span id="tshirt2-stock">10</span></p>
+          <button onclick="addToCart('BM', 'tshirt2')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="item">
+        <img src="images/t3.png" alt="T-shirt 3">
+        <div class="item-details">
+          <h3>Uniqlo U</h3>
+          <p>Without question, Uniqlo's beloved U line, conceived in collaboration with French designer Christophe Lemaire, is one of the best places to snag any number of elevated essentials. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="tshirt3-price">10</span></p>
+          <p class="stockFont">Stock: <span id="tshirt3-stock">10</span></p>
+          <button onclick="addToCart('DOBLE-U', 'tshirt3')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/t4.jpg" alt="T-shirt 4">
+        <div class="item-details">
+          <h3>Everlane</h3>
+          <p>Everlane here, tend to wrinkle less and hold their shape better in the long run. So if you want an investment tee you aren't going to need to throw out after a handful of washes, this is the one for you. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="tshirt4-price">10</span></p>
+          <p class="stockFont">Stock: <span id="tshirt4-stock">10</span></p>
+          <button onclick="addToCart('EV', 'tshirt4')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Add more items with descriptions -->
+    </section>
+    <section class="perfume" id="perfume" >
+      <h2 id="perfume">Perfume</h2>
+      <div class="item">
+        <img src="images/p1.jpg" alt="Perfume 1">
+        <div class="item-details">
+          <h3>Gucci Perfume</h3>
+          <p>Italian fashion house Gucci never fails when it comes to making a scene. Masterfully blending bottles with a signature soft edge, Gucci is just as luxurious as it is artfully creative</p>
+          <br>
+          <p class="priceFont">Price: $<span id="perfume1-price">5</span></p>
+          <p class="stockFont">Stock: <span id="perfume1-stock">10</span></p>
+          <button onclick="addToCart('Gucci', 'perfume1')" class="button-81">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/p2.jpg" alt="Perfume 2">
+        <div class="item-details">
+          <h3>Chanel Perfume</h3>
+          <p>French Chanel practically wrote the manual when it comes to the best fragrance. One of the best perfume brands, it’s evolved like a fine wine over the years, it’s hard to beat Chanel’s signature iris-heavy blends for any occasion. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="perfume2-price">8</span></p>
+          <p class="stockFont">Stock: <span id="perfume2-stock">10</span></p>
+          <button onclick="addToCart('Chanel', 'perfume2')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/p3.jpg" alt="Perfume 3">
+        <div class="item-details">
+          <h3>Givenchy Perfume</h3>
+          <p>Silky and seductive, Givenchy fragrance is a soft dream of a brand — the encapsulation of all things delicately feminine. Attention to detail is key with a Givenchy fragrance. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="perfume3-price">9</span></p>
+          <p class="stockFont">Stock: <span id="perfume3-stock">10</span></p>
+          <button onclick="addToCart('Givenchy', 'perfume3')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/p4.jpg" alt="Perfume 4">
+        <div class="item-details">
+          <h3>Tom Ford Perfume</h3>
+          <p>Tom Ford is the power dresser of the fragrance world. Sharp tailoring comes in the form of Tom Ford Black Orchid’s truffle, gardenia, and blackcurrant appeal, and sits itself down confidently on a superyacht sundeck with a quick spritz of Eau De Soleil Blanc. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="perfume4-price">7</span></p>
+          <p class="stockFont">Stock: <span id="perfume4-stock">10</span></p>
+          <button onclick="addToCart('TFP', 'perfume4')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Add more items with descriptions -->
+    </section>
+    <section class="sando" id="sando" >
+      <h2 id="sando">Sando</h2>
+      <div class="item">
+        <img src="images/s1.jpg" alt="Sando 1">
+        <div class="item-details">
+          <h3>Levi’s Sando</h3>
+          <p>Levi is an American apparel brand established in 1853 and is well-known worldwide for its denim jeans. One of the biggest garment firms in the world and a leader in the clothing industry, Levi sells its products in more than 110 nations </p>
+          <br>
+          <p class="priceFont">Price: $<span id="sando1-price">8</span></p>
+          <p class="stockFont">Stock: <span id="sando1-stock">10</span></p>
+          <button onclick="addToCart('Levi’s', 'sando1')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/s2.jpg" alt="Sando 2">
+        <div class="item-details">
+          <h3>Rupa Sando</h3>
+          <p>Rupa was established in 1968 and is currently one of the top knitwear brands in India. It provides the whole spectrum of knitted clothing, from cosy underwear to stylish casual attire. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="sando2-price">10</span></p>
+          <p class="stockFont">Stock: <span id="sando2-stock">10</span></p>
+          <button onclick="addToCart('Rupa', 'sando2')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/s3.jpg" alt="Sando 3">
+        <div class="item-details">
+          <h3>Adidas Sando</h3>
+          <p>Adidas Workout Sando For Men showcases instant slimming & hidden under any clothes. The body sculpting shirt adopts the high-end 360°seamless-knitting technology which enhances the overall compression effect </p>
+          <br>
+          <p class="priceFont">Price: $<span id="sando3-price">11</span></p>
+          <p class="stockFont">Stock: <span id="sando3-stock">10</span></p>
+          <button onclick="addToCart('Adidas', 'sando3')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/s4.jpg" alt="Sando 4">
+        <div class="item-details">
+          <h3>Fly Emirate Sando</h3>
+          <p>Football Boxer Sando for Men is suitable for any occasion, the medium thickness fabric is very sturdy without sacrificing comfort </p>
+          <br>
+          <p class="priceFont">Price: $<span id="sando4-price">10</span></p>
+          <p class="stockFont">Stock: <span id="sando4-stock">10</span></p>
+          <button onclick="addToCart('FES', 'sando4')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Add more items with descriptions -->
+    </section>
+    <section class="toy" id="toy" >
+      <h2 id="toy">Toys</h2>
+      <div class="item">
+        <img src="images/y1.jpg" alt="Toy 1">
+        <div class="item-details">
+          <h3>Airplane Toys</h3>
+          <p>Our glider boy toy is equipped with 3 different colors of green, orange, and blue gliding foam planes, and 1 plane launcher. Throwing planes by hand or flying them with launcher, kids can cultivate their hand-eye coordination, observation, and sense of direction. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="toy1-price">5</span></p>
+          <p class="stockFont">Stock: <span id="toy1-stock">10</span></p>
+          <button onclick="addToCart('Airplane', 'toy1')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/y2.jpg" alt="Toy 2">
+        <div class="item-details">
+          <h3>RC Stunt Master</h3>
+          <p>Brace for mind-blowing stunts with our 4WD gesture sensing RC stunt car. Drift in all directions, glide sideways, and spin 360 degrees. Perfect for thrill-seekers young and old. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="toy2-price">6</span></p>
+          <p class="stockFont">Stock: <span id="toy2-stock">10</span></p>
+          <button onclick="addToCart('RC-SM', 'toy2')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/y3.jpg" alt="Toy 3">
+        <div class="item-details">
+          <h3>LED Gloves</h3>
+          <p>Led gloves Material and producting technology have improved, the cotton fabric used is lighter and more breathable and stretchable. High quality 10mm light guide ensures the lights more. Colorful glow gloves help you look cool, suitable for 3 4 5 6 7 8 9 10 11 12 years old boys girls. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="toy3-price">8</span></p>
+          <p class="stockFont">Stock: <span id="toy3-stock">10</span></p>
+          <button onclick="addToCart('Gloves', 'toy3')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/y4.png" alt="Toy 4">
+        <div class="item-details">
+          <h3>FLUESTON LCD Writing Tablet</h3>
+          <p>The kids toys is a good educational learning toys, which helps child free their imagination and creativity. It is the best toddler toys for boys girls. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="toy4-price">5</span></p>
+          <p class="stockFont">Stock: <span id="toy4-stock">10</span></p>
+          <button onclick="addToCart('FLUESTON', 'toy4')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Add more items with descriptions -->
+    </section>
+  </main>
+  <button id="backButton">Back to Main</button>
+  <script src="scripts.js"></script>
+</body>
+</html>

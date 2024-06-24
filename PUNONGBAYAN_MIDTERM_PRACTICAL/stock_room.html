@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Room</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="logo-container">
+      <a href="#" class="logo">
+          <img src="images/logo.jpeg" alt="logo">
+      </a>
+    </div>
+    <nav class="navbar">
+        <a href="index.html" class="button-81">Home</a>
+    </nav>
+  </header>
+  <main>
+    <section class="stock-management">
+      <h1>Stock Room</h1>
+      <table class="stock-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Current Stock</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="images/J1.jpg" alt="Jeans 1"></td>
+            <td>
+              <h3>Slim-Fit Jeans</h3>
+            </td>
+            <td><span id="jeans1-stock">0</span></td>
+            <td><button onclick="increaseStock('jeans1')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/j2.png" alt="Jeans 2"></td>
+            <td>
+              <h3>Skinny Jeans</h3>
+            </td>
+            <td><span id="jeans2-stock">0</span></td>
+            <td><button onclick="increaseStock('jeans2')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/j3.png" alt="Jeans 3"></td>
+            <td>
+              <h3>Relaxed-Fit Jeans</h3>
+            </td>
+            <td><span id="jeans3-stock">0</span></td>
+            <td><button onclick="increaseStock('jeans3')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/j4.png" alt="Jeans 4"></td>
+            <td>
+              <h3>Bootcut Jeans</h3>
+            </td>
+            <td><span id="jeans4-stock">0</span></td>
+            <td><button onclick="increaseStock('jeans4')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/t1.png" alt="T-shirt 1"></td>
+            <td>
+              <h3>Alternative</h3>
+            </td>
+            <td><span id="tshirt1-stock">0</span></td>
+            <td><button onclick="increaseStock('tshirt1')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/t2.png" alt="T-shirt 2"></td>
+            <td>
+              <h3>Buck Mason</h3>
+            </td>
+            <td><span id="tshirt2-stock">0</span></td>
+            <td><button onclick="increaseStock('tshirt2')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/t3.png" alt="T-shirt 3"></td>
+            <td>
+              <h3>Uniqlo U</h3>
+            </td>
+            <td><span id="tshirt3-stock">0</span></td>
+            <td><button onclick="increaseStock('tshirt3')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/t4.jpg" alt="T-shirt 4"></td>
+            <td>
+              <h3>Everlane</h3>
+            </td>
+            <td><span id="tshirt4-stock">0</span></td>
+            <td><button onclick="increaseStock('tshirt4')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/p1.jpg" alt="Perfume 1"></td>
+            <td>
+              <h3>Gucci Perfume</h3>
+            </td>
+            <td><span id="perfume1-stock">0</span></td>
+            <td><button onclick="increaseStock('perfume1')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/p2.jpg" alt="Perfume 2"></td>
+            <td>
+              <h3>Chanel Perfume</h3>
+            </td>
+            <td><span id="perfume2-stock">0</span></td>
+            <td><button onclick="increaseStock('perfume2')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/p3.jpg" alt="Perfume 3"></td>
+            <td>
+              <h3>Givenchy Perfume</h3>
+            </td>
+            <td><span id="perfume3-stock">0</span></td>
+            <td><button onclick="increaseStock('perfume3')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/p4.jpg" alt="Perfume 4"></td>
+            <td>
+              <h3>Tom Ford Perfume</h3>
+            </td>
+            <td><span id="perfume4-stock">0</span></td>
+            <td><button onclick="increaseStock('perfume4')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/s1.jpg" alt="Sando 1"></td>
+            <td>
+              <h3>Levi’s Sando</h3>
+            </td>
+            <td><span id="sando1-stock">0</span></td>
+            <td><button onclick="increaseStock('sando1')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/s2.jpg" alt="Sando 2"></td>
+            <td>
+              <h3>Rupa Sando</h3>
+            </td>
+            <td><span id="sando2-stock">0</span></td>
+            <td><button onclick="increaseStock('sando2')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/s3.jpg" alt="Sando 3"></td>
+            <td>
+              <h3>Adidas Sando</h3>
+            </td>
+            <td><span id="sando3-stock">0</span></td>
+            <td><button onclick="increaseStock('sando3')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/s4.jpg" alt="Sando 4"></td>
+            <td>
+              <h3>Fly Emirate Sando</h3>
+            </td>
+            <td><span id="sando4-stock">0</span></td>
+            <td><button onclick="increaseStock('sando4')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/y1.jpg" alt="Toy 1"></td>
+            <td>
+              <h3>Airplane Toys</h3>
+            </td>
+            <td><span id="toy1-stock">0</span></td>
+            <td><button onclick="increaseStock('toy1')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/y2.jpg" alt="Toy 2"></td>
+            <td>
+              <h3>RC Stunt Master</h3>
+            </td>
+            <td><span id="toy2-stock">0</span></td>
+            <td><button onclick="increaseStock('toy2')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/y3.jpg" alt="Toy 3"></td>
+            <td>
+              <h3>LED Gloves</h3>
+            </td>
+            <td><span id="toy3-stock">0</span></td>
+            <td><button onclick="increaseStock('toy3')" class="button-81">Add Stock</button></td>
+          </tr>
+          <tr>
+            <td><img src="images/y4.png" alt="Toy 4"></td>
+            <td>
+              <h3>FLUESTON LCD Writing Tablet</h3>
+            </td>
+            <td><span id="toy4-stock">0</span></td>
+            <td><button onclick="increaseStock('toy4')" class="button-81">Add Stock</button></td>
+          </tr>
+          <!-- Add more items as needed -->
+        </tbody>
+      </table>
+    </section>
+  </main>  
+  <button id="backButton">Back to Main</button>
+  <script src="scripts.js"></script>
+</body>
+</html>

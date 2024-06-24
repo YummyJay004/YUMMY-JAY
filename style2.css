@@ -1,0 +1,38 @@
+body {
+    background-image: url('images/background.jpg'); /* Replace 'background-image.jpg' with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff; /* Default text color */
+}
+
+header, main, footer {
+    position: relative; /* Ensure content stays above background image */
+    z-index: 1; /* Ensure content is above background image */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for cards */
+    border: none; /* Remove default border */
+}
+
+.card-title {
+    color: #ffffff; /* Card title color */
+    font-size: 1.7rem;
+    text-shadow: 3px 3x 4px rgb(0, 0, 0);;
+}
+
+.card-text {
+    color: #ffffff; /* Card text color */
+    font-size: 1.7rem;
+    text-shadow: 3px 3px 4px rgb(0, 0, 0);;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background for footer */
+    color: #fff; /* Footer text color */
+}
+.card{
+    background-color: transparent;
+}
